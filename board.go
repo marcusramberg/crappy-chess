@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/hajimehoshi/ebiten"
 	"image/color"
+
+	"github.com/hajimehoshi/ebiten"
 )
 
 // Creates the backend chess board
@@ -10,7 +11,7 @@ func CreateBoard() *[8][8]Tile {
 	var board [8][8]Tile
 	i := 30
 	for a, row := range board {
-		for b, _ := range row {
+		for b := range row {
 			xleft := 20 + i + i*(b-1)
 			xright := xleft + i
 			ytop := 20 + i + i*(a-1)
@@ -77,5 +78,4 @@ func StartingPiecePos(board *[8][8]Tile) {
 	for i := 0; i < 8; i++ {
 		board[6][i].piece = CreatePiece(0, 0)
 	}
-
 }
